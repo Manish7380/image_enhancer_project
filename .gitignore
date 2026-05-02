@@ -1,0 +1,17 @@
+lol_dataset/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+env/
+demo/
+test_*.py
+run_demo_test.py
+test_baked_model_output.png
+*.jpg
+*.png
+!demo/street_night_enhanced.jpg
+!demo/dark_alley_enhanced.jpg
+!demo/night_city_enhanced.jpg
+src/training_output/*.pth
