@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 lol_dataset/
+=======
+>>>>>>> b21be4c (Configure Git LFS for large image files and dataset)
 __pycache__/
 *.pyc
 .DS_Store
@@ -14,4 +17,17 @@ test_baked_model_output.png
 !demo/street_night_enhanced.jpg
 !demo/dark_alley_enhanced.jpg
 !demo/night_city_enhanced.jpg
+<<<<<<< HEAD
+=======
+!lol_dataset/**
+!lol_dataset/**/*.jpg
+!lol_dataset/**/*.jpeg
+!lol_dataset/**/*.png
+!src/lol_dataset/**
+!src/lol_dataset/**/*.jpg
+!src/lol_dataset/**/*.jpeg
+!src/lol_dataset/**/*.png
+training_output/
+working/
+>>>>>>> b21be4c (Configure Git LFS for large image files and dataset)
 src/training_output/*.pth
