@@ -1,5 +1,9 @@
 import streamlit as st
 import torch
+
+# Disable MPS on macOS to prevent convolution operation crashes
+torch.backends.mps.enabled = False
+
 import cv2
 import numpy as np
 from PIL import Image
@@ -110,7 +114,11 @@ def load_model():
         torch.set_num_threads(4)
         
         # FORCE CPU INSTEAD OF MPS to prevent "convolution_overrideable not implemented" crashes on Mac
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        if torch.cuda.is_available():
+            device = torch.device("cuda")
+        else:
+            # Force CPU on Mac to avoid MPS issues with convolution operations
+            device = torch.device("cpu")
         
         if not os.path.exists(MODEL_PATH):
             st.warning(f"⚠️ Model file not found at {MODEL_PATH}")
